@@ -39,9 +39,11 @@ app.use(
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.json());
 //app.use(cors());
-mongoose.connect(
-  "mongodb+srv://aman:amann@cluster0.9g6eyon.mongodb.net/ahatk?retryWrites=true&w=majority&appName=Cluster0"
-);
+
+
+app.get("/", (red, res) => {
+res.json("Hello");
+});
 app.use("/api/user", authRoute);
 app.use("/api/product", productRoute);
 app.use("/api/blog", blogRoute);
